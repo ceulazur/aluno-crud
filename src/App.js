@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import AlunoForm from './components/AlunoForm';
+import AlunoList from './components/AlunoList';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li><Link to="/alunos">Listar Alunos</Link></li>
+            <li><Link to="/alunos/novo">Adicionar Aluno</Link></li>
+          </ul>
+        </nav>
+        <Routes>
+          <Route path="/alunos" exact component={AlunoList} />
+          <Route path="/alunos/novo" component={AlunoForm} />
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
