@@ -48,7 +48,7 @@ export const Alunos = () => {
   }
 
   return (
-    <section className="container bg-light row g-3 p-4 rounded">
+    <section className="container bg-white row g-3 p-4 rounded">
       <p className="d-flex justify-content-between">
         <h2>Alunos</h2>
         <button type="button" className="btn btn-primary" onClick={handlePintarAlunos}>Pintar</button>
@@ -61,6 +61,7 @@ export const Alunos = () => {
             <th>Nome</th>
             <th>IRA</th>
             <th>Curso</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>

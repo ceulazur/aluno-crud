@@ -18,7 +18,7 @@ export const ListAlunoByCourse = () => {
   }, []);
 
   return (
-    <section className="container bg-light row g-3 p-4 rounded">
+    <section className="container bg-white row g-3 p-4 rounded">
       <div className="table-responsive">
         <table className="table align-middle">
           <thead>
@@ -26,7 +26,6 @@ export const ListAlunoByCourse = () => {
               <th>#</th>
               <th>Nome</th>
               <th>IRA</th>
-              <th>Curso</th>
             </tr>
           </thead>
           <tbody>
@@ -40,7 +39,6 @@ export const ListAlunoByCourse = () => {
                     <td>{aluno.ira >= 7 ? (<i className="bi bi-brightness-low-fill text-warning"></i>) : ('')}</td>
                     <td>{aluno.nome}</td>
                     <td>{aluno.ira}</td>
-                    <td>{aluno.curso}</td>
                   </tr>
                 ))}
               </>
