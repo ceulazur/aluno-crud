@@ -35,9 +35,9 @@ export const ListAlunoByCourse = () => {
                 <tr>
                   <td colSpan={4}><strong>{curso}</strong></td>
                 </tr>
-                {alunos.filter(aluno => aluno.curso === curso).map((aluno, index) => (
-                  <tr key={index}>
-                    <td>{aluno.id}</td>
+                {alunos.filter(aluno => aluno.curso === curso).map((aluno) => (
+                  <tr key={aluno.id}>
+                    <td>{aluno.ira >= 7 ? (<i className="bi bi-brightness-low-fill text-warning"></i>) : ('')}</td>
                     <td>{aluno.nome}</td>
                     <td>{aluno.ira}</td>
                     <td>{aluno.curso}</td>
@@ -45,21 +45,6 @@ export const ListAlunoByCourse = () => {
                 ))}
               </>
             ))}
-            {/* <tr>
-
-            </tr>
-            <tr className="align-bottom">
-              <td>.testeando</td>
-              <td>...</td>
-              <td>...</td>
-              <td>This cell is aligned to the bottom.</td>
-            </tr>
-            <tr>
-              <td>...</td>
-              <td>...</td>
-              <td className="align-top">This cell is aligned to the top.</td>
-              <td>...</td>
-            </tr> */}
           </tbody>
         </table>
       </div>

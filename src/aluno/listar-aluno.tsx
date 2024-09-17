@@ -49,12 +49,15 @@ export const Alunos = () => {
 
   return (
     <section className="container bg-light row g-3 p-4 rounded">
-      <button type="button" className="btn btn-primary" onClick={handlePintarAlunos}>Pintar</button>
+      <p className="d-flex justify-content-between">
+        <h2>Alunos</h2>
+        <button type="button" className="btn btn-primary" onClick={handlePintarAlunos}>Pintar</button>
+      </p>
 
-      <Table className=" table-hover" striped bordered hover>
+      <Table  hover>
         <thead>
           <tr>
-            <th>#</th>
+            <th className="d-flex justify-content-center">#</th>
             <th>Nome</th>
             <th>IRA</th>
             <th>Curso</th>
@@ -64,10 +67,9 @@ export const Alunos = () => {
           {
             alunos?.map(aluno => (
               <tr className={isColored ? getBackgroundByIra(aluno.ira) : ''} key={aluno.id}>
-                <td>
+                <td className="d-flex justify-content-center" height={54}>
                   <Link to={`/alunos/editar/${aluno.id}`}>
                     <i className="bi bi-pencil-fill"></i>
-                    {aluno.id}
                   </Link>
                 </td>
                 <td>{aluno.nome}</td>
@@ -87,7 +89,7 @@ export const Alunos = () => {
             <td></td>
             <td></td>
             <td>Média IRA</td>
-            <td>{ media }</td>
+            <td>{media}</td>
           </tr>
 
         </tbody>
